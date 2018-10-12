@@ -29,7 +29,7 @@ bool file_exists(const std::string& name) {
 const std::vector<std::string> get_stop_words(const std::string& filename) {
 	std::vector<std::string> result;
 	if (!file_exists(filename)) return result;
-// TODO: check file readability
+	// TODO: check file readability
 	std::fstream filter;
 	filter.open(filename, std::ios::in);
 	std::string line;
@@ -61,9 +61,9 @@ const std::vector<std::string> filter_tokens(const std::vector<std::string>& inp
 	std::vector<std::string> result;
 	std::copy_if (input.begin(), input.end(), std::back_inserter(result),
 			[filter](std::string in) {
-				return std::find(filter.begin(), filter.end(), in) == filter.end();
+			return std::find(filter.begin(), filter.end(), in) == filter.end();
 			}
-	);
+		     );
 	return result;
 }
 
@@ -72,9 +72,9 @@ const int get_word_count(const std::vector<std::string>& input) {
 }
 
 const int get_word_count_distinct(const std::vector<std::string>& input) {
-    std::set<std::string> result;
-    for (const auto &i : input) result.insert(i);
-    return result.size();
+	std::set<std::string> result;
+	for (const auto &i : input) result.insert(i);
+	return result.size();
 }
 
 // --- integration ---
@@ -91,7 +91,7 @@ const std::pair<int, int> run(const std::string& input) {
 #ifndef TESTMODE
 int main() {
 	auto input = read_input();
-    auto count = run(input);
+	auto count = run(input);
 	output(count.first, count.second);
 }
 #endif

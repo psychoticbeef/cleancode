@@ -1,0 +1,1 @@
+g++ -std=c++11 -o test test.cpp -L/usr/lib -DTESTMODE  /usr/lib/libgtest.a /usr/lib/libgtest_main.a /usr/local/lib/libgmock.a /usr/local/lib/libgmock_main.a -lpthread  && ./test

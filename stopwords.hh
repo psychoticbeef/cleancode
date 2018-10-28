@@ -1,3 +1,6 @@
+#ifndef STOPWORDS_H
+#define STOPWORDS_H
+
 #include <fstream>
 #include <gtest/gtest.h>
 #include <iostream>
@@ -6,6 +9,9 @@
 #include <vector>
 
 // --- UI class ---
+
+class Stopwords {
+public:
 
 std::string read_input() {
 	std::cout << "Enter sentence: ";
@@ -87,11 +93,6 @@ const std::pair<int, int> run(const std::string& input) {
 	auto count_distinct =  get_word_count_distinct(filtered);
 	return std::make_pair(count, count_distinct);
 }
+};
 
-#ifndef TESTMODE
-int main() {
-	auto input = read_input();
-	auto count = run(input);
-	output(count.first, count.second);
-}
 #endif

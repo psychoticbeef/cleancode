@@ -1,3 +1,4 @@
-main
+stopwords
 test
 *.swp
+*.o

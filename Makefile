@@ -6,10 +6,10 @@ LDFLAGS=-g
 LDLIBS=
 LDLIBS_TEST=-L/usr/local/lib -lgtest -lgtest_main -lgmock -lgmock_main -lpthread
 
-SRCS=main.cc
+SRCS=main.cc stopwords.cc
 OBJS=$(subst .cc,.o,$(SRCS))
 
-SRCS_TEST=test.cc
+SRCS_TEST=test.cc stopwords.cc
 OBJS_TEST=$(subst .cc,.o,$(SRCS_TEST))
 
 all: stopwords test

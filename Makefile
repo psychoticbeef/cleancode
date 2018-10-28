@@ -21,5 +21,5 @@ test: $(OBJS_TEST)
 	$(CXX) $(LDFLAGS) -o test $(OBJS_TEST) $(LDLIBS) $(LDLIBS_TEST)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_TEST)
+	$(RM) $(OBJS) $(OBJS_TEST) stopwords test
 

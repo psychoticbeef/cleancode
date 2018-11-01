@@ -8,6 +8,5 @@ std::string UI::read_input() {
 }
 
 void UI::output(int count, int count_distinct) {
-    std::cout << "count: " << count << std::endl;
-    std::cout << "count distinct: " << count_distinct << std::endl;
+    std::cout << "Number of words: " << count << ", unique: " << count_distinct << std::endl;
 }

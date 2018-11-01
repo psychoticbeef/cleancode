@@ -6,7 +6,7 @@ LDFLAGS=-g
 LDLIBS=
 LDLIBS_TEST=-L/usr/local/lib -lgtest -lgtest_main -lgmock -lgmock_main -lpthread
 
-SHARED_SRCS=businesslogic.cc parameter.cc statistics.cc stopwords.cc ui.cc wordcount.cc
+SHARED_SRCS=businesslogic.cc dict.cc parameter.cc statistics.cc storage.cc ui.cc wordcount.cc
 SRCS=main.cc $(SHARED_SRCS)
 OBJS=$(subst .cc,.o,$(SRCS))
 

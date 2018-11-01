@@ -17,5 +17,4 @@ std::string UI::read_file(std::string filename) {
 
 void UI::output(IPrintable& printable, bool should_print_index) {
     std::cout << printable.print() << std::endl;
-    std::cout << printable.print_index() << std::endl;
 }

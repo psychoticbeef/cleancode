@@ -1,14 +1,12 @@
 #include "businesslogic.hh"
-#include "stopwords.hh"
-#include "wordcount.hh"
 
 Statistics BusinessLogic::run(const std::string& input) {
-    Stopwords sw;
     WordCount wc;
 
     auto tokens     = wc.get_tokens(input);
-    auto stop_words = sw.get_stop_words("stopwords.txt");
+    auto stop_words = Storage::getInstance().get_list("stopwords.txt");
     auto filtered   = wc.filter_tokens(tokens, stop_words);
+    auto statistics = Statistics(filtered);
 
-    return Statistics(filtered);
+    return statistics;
 }

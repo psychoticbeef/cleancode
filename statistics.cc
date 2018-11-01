@@ -19,6 +19,9 @@ float Statistics::get_average_word_length(Type::Tokens t) {
     size_t result = std::accumulate(
         t.begin(), t.end(), 0,
         [](size_t sum, const std::string& elem) { return sum + elem.size(); });
+    if (t.size() == 0) {
+        return std::numeric_limits<float>::quiet_NaN();
+    }
     return result / t.size();
 }
 
@@ -31,10 +34,6 @@ std::string Statistics::print() {
     return ss.str();
 }
 
-std::string Statistics::print_index() {
-    std::stringstream ss;
-    for (const auto &s : m_tokens) {
-        ss << s << std::endl;
-    }
-    return ss.str();
+Type::TokensSet Statistics::get_unique() {
+    return m_tokens_unique;
 }

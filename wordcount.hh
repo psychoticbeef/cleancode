@@ -13,7 +13,7 @@ class WordCount {
     const std::vector<std::string> get_tokens(const std::string& input);
     const std::vector<std::string> filter_tokens(
         const std::vector<std::string>& input,
-        const std::vector<std::string>& filter);
+        const std::set<std::string>& filter);
 
    private:
     const std::string m_pattern;

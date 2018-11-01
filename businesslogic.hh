@@ -4,6 +4,8 @@
 #include <string>
 #include <utility>
 #include "statistics.hh"
+#include "storage.hh"
+#include "wordcount.hh"
 
 class BusinessLogic {
    public:

@@ -23,7 +23,7 @@ const std::vector<std::string> WordCount::get_tokens(const std::string& input) {
 
 const std::vector<std::string> WordCount::filter_tokens(
     const std::vector<std::string>& input,
-    const std::vector<std::string>& filter) {
+    const std::set<std::string>& filter) {
     std::vector<std::string> result;
     std::copy_if(input.begin(), input.end(), std::back_inserter(result),
                  [filter](std::string in) {

@@ -1,6 +1,7 @@
 #ifndef STATISTICS_HH
 #define STATISTICS_HH
 
+#include <limits>
 #include <numeric>
 #include <sstream>
 #include "iprintable.hh"
@@ -17,8 +18,8 @@ class Statistics : public IPrintable {
     size_t get_token_count();
     size_t get_token_count_unique();
     float get_average_word_length(Type::Tokens t);
+    Type::TokensSet get_unique();
     std::string print() override;
-    std::string print_index() override;
 };
 
 #endif

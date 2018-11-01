@@ -1,6 +1,6 @@
 #include "wordcount.hh"
 
-WordCount::WordCount() : m_pattern("([^a-zA-Z]+)") {
+WordCount::WordCount() : m_pattern("([^\\w-]+)") {
 }
 
 const std::vector<std::string> WordCount::split_string(

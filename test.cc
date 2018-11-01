@@ -11,6 +11,15 @@ TEST(WordCountTest, Test) {
     ASSERT_EQ(2, wc.get_word_count({"a", "b"}));
 }
 
+TEST(IntegrationsTest, HyphenTest) {
+    BusinessLogic bl;
+    std::string testcase =
+        "Humpty-Dumpty sat on a wall. Humpty-Dumpty had a great fall.";
+    ASSERT_EQ(7, bl.run(testcase).first);
+    ASSERT_EQ(6, bl.run(testcase).second);
+}
+
+
 TEST(FilterTest, Test) {
     WordCount wc;
     std::vector<std::string> filter = {"a", "on", "off", "the"};

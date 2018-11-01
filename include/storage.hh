@@ -2,9 +2,9 @@
 #define STORAGE_HH
 
 #include <fstream>
+#include <set>
 #include <string>
 #include <utility>
-#include <set>
 
 class Storage {
    private:

@@ -2,7 +2,7 @@
 
 Statistics::Statistics(Type::Tokens tokens) {
     m_tokens = tokens;
-    for (const auto &token : tokens) {
+    for (const auto& token : tokens) {
         m_tokens_unique.insert(token);
     }
 }

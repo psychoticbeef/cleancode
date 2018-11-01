@@ -5,12 +5,10 @@ bool Storage::file_exists(const std::string& name) {
     return f.good();
 }
 
-const std::set<std::string> Storage::get_list(
-    const std::string& filename) {
+const std::set<std::string> Storage::get_list(const std::string& filename) {
     std::set<std::string> result;
     if (!file_exists(filename))
         return result;
-    // TODO: check file readability
     std::fstream filter;
     filter.open(filename, std::ios::in);
     std::string line;

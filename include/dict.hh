@@ -1,11 +1,11 @@
 #ifndef DICT_HH
 #define DICT_HH
 
-#include <string>
 #include <sstream>
+#include <string>
 #include "iprintable.hh"
-#include "type.hh"
 #include "storage.hh"
+#include "type.hh"
 
 class Dict : public IPrintable {
    private:

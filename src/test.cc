@@ -19,7 +19,6 @@ TEST(IntegrationsTest, HyphenTest) {
     ASSERT_EQ(6, bl.run(testcase).second);
 }
 
-
 TEST(FilterTest, Test) {
     WordCount wc;
     std::vector<std::string> filter = {"a", "on", "off", "the"};

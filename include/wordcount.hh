@@ -6,19 +6,19 @@
 #include <set>
 #include <string>
 #include <vector>
+#include "type.hh"
 
 class WordCount {
    public:
     WordCount();
-    const std::vector<std::string> get_tokens(const std::string& input);
-    const std::vector<std::string> filter_tokens(
-        const std::vector<std::string>& input,
-        const std::set<std::string>& filter);
+    const Type::Tokens get_tokens(const std::string& input);
+    const Type::Tokens filter_tokens(const Type::Tokens& input,
+                                     const Type::TokensSet& filter);
 
    private:
     const std::string m_pattern;
-    const std::vector<std::string> split_string(
-        const std::string& stringToSplit, const std::string& regexPattern);
+    const Type::Tokens split_string(const std::string& stringToSplit,
+                                    const std::string& regexPattern);
 };
 
 #endif

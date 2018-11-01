@@ -3,9 +3,9 @@
 WordCount::WordCount() : m_pattern("([^\\w-]+)") {
 }
 
-const std::vector<std::string> WordCount::split_string(
+const Type::Tokens WordCount::split_string(
     const std::string& stringToSplit, const std::string& regexPattern) {
-    std::vector<std::string> result;
+    Type::Tokens result;
     const std::regex rgx(regexPattern);
     std::sregex_token_iterator iter(stringToSplit.begin(), stringToSplit.end(),
                                     rgx, -1);
@@ -17,14 +17,14 @@ const std::vector<std::string> WordCount::split_string(
     return result;
 }
 
-const std::vector<std::string> WordCount::get_tokens(const std::string& input) {
+const Type::Tokens WordCount::get_tokens(const std::string& input) {
     return split_string(input, m_pattern);
 }
 
-const std::vector<std::string> WordCount::filter_tokens(
-    const std::vector<std::string>& input,
-    const std::set<std::string>& filter) {
-    std::vector<std::string> result;
+const Type::Tokens WordCount::filter_tokens(
+    const Type::Tokens& input,
+    const Type::TokensSet& filter) {
+    Type::Tokens result;
     std::copy_if(input.begin(), input.end(), std::back_inserter(result),
                  [filter](std::string in) {
                      return std::find(filter.begin(), filter.end(), in) ==

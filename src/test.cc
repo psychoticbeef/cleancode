@@ -2,7 +2,9 @@
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
 #include "businesslogic.hh"
-#include "stopwords.hh"
+#include "dict.hh"
+#include "parameter.hh"
+#include "statistics.hh"
 #include "wordcount.hh"
 
 TEST(WordCountTest, Test) {

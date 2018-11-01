@@ -14,8 +14,6 @@ class WordCount {
     const std::vector<std::string> filter_tokens(
         const std::vector<std::string>& input,
         const std::vector<std::string>& filter);
-    const int get_word_count(const std::vector<std::string>& input);
-    const int get_word_count_distinct(const std::vector<std::string>& input);
 
    private:
     const std::string m_pattern;

@@ -32,14 +32,3 @@ const std::vector<std::string> WordCount::filter_tokens(
                  });
     return result;
 }
-
-const int WordCount::get_word_count(const std::vector<std::string>& input) {
-    return input.size();
-}
-
-const int WordCount::get_word_count_distinct(
-    const std::vector<std::string>& input) {
-    std::set<std::string> result;
-    for (const auto& i : input) result.insert(i);
-    return result.size();
-}

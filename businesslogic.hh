@@ -3,10 +3,11 @@
 
 #include <string>
 #include <utility>
+#include "statistics.hh"
 
 class BusinessLogic {
    public:
-    std::pair<int, int> run(const std::string& input);
+    Statistics run(const std::string& input);
 };
 
 #endif

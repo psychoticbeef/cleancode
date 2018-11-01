@@ -15,7 +15,6 @@ std::string UI::read_file(std::string filename) {
     return result.str();
 }
 
-void UI::output(int count, int count_distinct) {
-    std::cout << "Number of words: " << count << ", unique: " << count_distinct
-              << std::endl;
+void UI::output(IPrintable& printable) {
+    std::cout << printable.print() << std::endl;
 }

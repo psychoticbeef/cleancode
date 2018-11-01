@@ -8,6 +8,6 @@ int main(int argc, char* argv[]) {
     Parameter p(argc, argv);
 
     auto input = p.has_file() ? ui.read_file(p.get_filename()) : ui.read_input();
-    auto count = bl.run(input);
-    ui.output(count.first, count.second);
+    auto statistics = bl.run(input);
+    ui.output(statistics);
 }

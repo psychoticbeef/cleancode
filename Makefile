@@ -6,20 +6,21 @@ LDFLAGS=-g
 LDLIBS=
 LDLIBS_TEST=-L/usr/local/lib -lgtest -lgtest_main -lgmock -lgmock_main -lpthread
 
-SRCS=main.cc stopwords.cc
+SHARED_SRCS=businesslogic.cc stopwords.cc ui.cc wordcount.cc
+SRCS=main.cc $(SHARED_SRCS)
 OBJS=$(subst .cc,.o,$(SRCS))
 
-SRCS_TEST=test.cc stopwords.cc
+SRCS_TEST=test.cc $(SHARED_SRCS)
 OBJS_TEST=$(subst .cc,.o,$(SRCS_TEST))
 
-all: stopwords test
+all: wordcount test
 
-stopwords: $(OBJS)
-	$(CXX) $(LDFLAGS) -o stopwords $(OBJS) $(LDLIBS)
+wordcount: $(OBJS)
+	$(CXX) $(LDFLAGS) -o wordcount $(OBJS) $(LDLIBS)
 
 test: $(OBJS_TEST)
 	$(CXX) $(LDFLAGS) -o test $(OBJS_TEST) $(LDLIBS) $(LDLIBS_TEST)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_TEST) stopwords test
+	$(RM) $(OBJS) $(OBJS_TEST) wordcount test
 

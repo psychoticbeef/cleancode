@@ -1,8 +1,11 @@
-#include "stopwords.hh"
+#include "ui.hh"
+#include "businesslogic.hh"
 
 int main() {
-    Stopwords sw;
-    auto input = sw.read_input();
-    auto count = sw.run(input);
-    sw.output(count.first, count.second);
+    UI ui;
+    BusinessLogic bl;
+
+    auto input = ui.read_input();
+    auto count = bl.run(input);
+    ui.output(count.first, count.second);
 }

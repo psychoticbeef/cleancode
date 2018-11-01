@@ -1,33 +1,35 @@
 #include <gmock/gmock-generated-matchers.h>
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
+#include "businesslogic.hh"
 #include "stopwords.hh"
+#include "wordcount.hh"
 
 TEST(WordCountTest, Test) {
-    Stopwords sw;
-    ASSERT_EQ(0, sw.get_word_count({}));
-    ASSERT_EQ(2, sw.get_word_count({"a", "b"}));
+    WordCount wc;
+    ASSERT_EQ(0, wc.get_word_count({}));
+    ASSERT_EQ(2, wc.get_word_count({"a", "b"}));
 }
 
 TEST(FilterTest, Test) {
-    Stopwords sw;
+    WordCount wc;
     std::vector<std::string> filter = {"a", "on", "off", "the"};
-    ASSERT_THAT(sw.filter_tokens({""}, filter), testing::ElementsAre(""));
-    ASSERT_THAT(sw.filter_tokens({"a", "b", "c"}, filter),
+    ASSERT_THAT(wc.filter_tokens({""}, filter), testing::ElementsAre(""));
+    ASSERT_THAT(wc.filter_tokens({"a", "b", "c"}, filter),
                 testing::ElementsAre("b", "c"));
-    ASSERT_THAT(sw.filter_tokens({"b", "c"}, filter),
+    ASSERT_THAT(wc.filter_tokens({"b", "c"}, filter),
                 testing::ElementsAre("b", "c"));
     ASSERT_THAT(
-        sw.filter_tokens({"mary", "had", "a", "little", "lamb"}, filter),
+        wc.filter_tokens({"mary", "had", "a", "little", "lamb"}, filter),
         testing::ElementsAre("mary", "had", "little", "lamb"));
 }
 
 TEST(GetTokenTest, Test) {
-    Stopwords sw;
-    ASSERT_THAT(sw.get_tokens("mary had a little lamb"),
+    WordCount wc;
+    ASSERT_THAT(wc.get_tokens("mary had a little lamb"),
                 testing::ElementsAre("mary", "had", "a", "little", "lamb"));
-    ASSERT_THAT(sw.get_tokens(" a "), testing::ElementsAre("a"));
-    ASSERT_THAT(sw.get_tokens("  "), testing::ElementsAre());
+    ASSERT_THAT(wc.get_tokens(" a "), testing::ElementsAre("a"));
+    ASSERT_THAT(wc.get_tokens("  "), testing::ElementsAre());
 }
 
 TEST(GetStopWordsTest, ValidTestFile) {

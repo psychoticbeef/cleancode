@@ -11,7 +11,7 @@ class UI {
    public:
     std::string read_input();
     std::string read_file(std::string filename);
-    void output(IPrintable&);
+    void output(IPrintable&, bool should_print_index = false);
 };
 
 #endif

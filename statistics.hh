@@ -18,6 +18,7 @@ class Statistics : public IPrintable {
     size_t get_token_count_unique();
     float get_average_word_length(Type::Tokens t);
     std::string print() override;
+    std::string print_index() override;
 };
 
 #endif

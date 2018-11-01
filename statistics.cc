@@ -30,3 +30,11 @@ std::string Statistics::print() {
 
     return ss.str();
 }
+
+std::string Statistics::print_index() {
+    std::stringstream ss;
+    for (const auto &s : m_tokens) {
+        ss << s << std::endl;
+    }
+    return ss.str();
+}

@@ -9,5 +9,5 @@ int main(int argc, char* argv[]) {
 
     auto input = p.has_file() ? ui.read_file(p.get_filename()) : ui.read_input();
     auto statistics = bl.run(input);
-    ui.output(statistics);
+    ui.output(statistics, p.should_print_index());
 }

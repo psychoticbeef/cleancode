@@ -16,6 +16,7 @@ CPPFLAGS = -Iinclude
 CFLAGS += -Wall
 LDFLAGS += -g -Llib
 LDLIBS += -lm
+LDLIBS_TEST=-L/usr/local/lib -lgtest -lgtest_main -lgmock -lgmock_main -lpthread
 
 .PHONY: all clean
 
@@ -25,7 +26,7 @@ $(EXE): $(OBJ_EXE)
 	$(CC) $(CPPFLAGS) $(LDFLAGS) $^ $(LDLIBS) -o $@
 
 $(TEST): $(OBJ_TEST)
-	$(CC) $(CPPFLAGS) $(LDFLAGS) $^ $(LDLIBS) -o $@
+	$(CC) $(CPPFLAGS) $(LDFLAGS) $^ $(LDLIBS) $(LDLIBS_TEST) -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cc
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@

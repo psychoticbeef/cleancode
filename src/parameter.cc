@@ -32,7 +32,7 @@ bool Parameter::has_file() {
     return m_has_file;
 }
 
-std::string Parameter::get_filename() {
+std::string& Parameter::get_filename() {
     return m_filename;
 }
 
@@ -40,7 +40,7 @@ bool Parameter::use_dict() {
     return m_use_dict;
 }
 
-std::string Parameter::get_dict_filename() {
+std::string& Parameter::get_dict_filename() {
     return m_dict;
 }
 

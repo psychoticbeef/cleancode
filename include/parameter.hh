@@ -19,9 +19,9 @@ class Parameter : public IPrintable {
    public:
     Parameter(int argc, char* argv[]);
     bool has_file();
-    std::string get_filename();
+    std::string& get_filename();
     bool use_dict();
-    std::string get_dict_filename();
+    std::string& get_dict_filename();
     bool should_print_index();
     std::string print() override;
 };

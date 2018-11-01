@@ -1,7 +1,7 @@
 #include "wordcount.hh"
 
-WordCount::WordCount() :
-     m_pattern("([^a-zA-Z]+)") {}
+WordCount::WordCount() : m_pattern("([^a-zA-Z]+)") {
+}
 
 const std::vector<std::string> WordCount::split_string(
     const std::string& stringToSplit, const std::string& regexPattern) {
@@ -12,7 +12,8 @@ const std::vector<std::string> WordCount::split_string(
     for (std::sregex_token_iterator end; iter != end; ++iter) {
         result.push_back(iter->str());
     }
-    if (result.size() >= 1 && result.at(0) == "") result.erase(result.begin());
+    if (result.size() >= 1 && result.at(0) == "")
+        result.erase(result.begin());
     return result;
 }
 

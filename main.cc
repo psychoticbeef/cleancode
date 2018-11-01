@@ -1,5 +1,5 @@
-#include "ui.hh"
 #include "businesslogic.hh"
+#include "ui.hh"
 
 int main() {
     UI ui;
